@@ -1,42 +1,31 @@
 #include "main.h"
-
 /**
- * is_divisible - Entry points
- * Description: check_Prime
- * @n: Int
- * @y: Int
+ * is_prime_number - check is  prime number
+ * @y:intger
+ * @n: intger
  * Return: 0 or 1 prime number
  */
 
-int is_divisible(int n, int y)
+int check_prime(int n, int y);
+int is_prime_number(int n)
 {
-	if (y == 1 || y == n)
-	{
-		return (0);
-	}
-	if (n % y == 0)
-	{
-		return (1);
-	}
-	return (check_prime(n, y - 1));
+	return (check_prime(n, 2));
 }
 
 /**
- * is_prime_number - Entry points
- * Description: Prime number
- * @n: Int
- * Return: 1 if prime number 0 otherwise
+ * check_prime - huifdug check all number < n if they can divide it
+ * @n: intger
+ * @y: intger
+ * Return: prime number
  */
 
-int is_prime_number(int n)
+int check_prime(int n, int y)
 {
-	if (n <= 1)
-	{
-		return (0);
-	}
-	if (n ==  2)
-	{
+
+	if (y >= n && n > 1)
 		return (1);
-	}
-	return (is_prime_number(n, n - 1));
+	else if (n % y == 0 || n <= 1)
+		return (0);
+	else
+		return (check_prime(n, y + 1));
 }
