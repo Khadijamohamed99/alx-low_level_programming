@@ -1,57 +1,53 @@
 #include "main.h"
 
 /**
- * get_length - Check a string is  palindrome
+ * last_index - Entry point
  * Description: Get the legth
  * @s: pointer the string
- * Return: Int
+ * Return: Intger
  */
-
-int get_length(char *s)
+int is_palindrome(char *s);
+int check(char *s, int start, int end, int mod);
+int last_index(char *s)
 {
-	if (*s == '\0')
-	{
-		return (0);
-	}
-	return (1 + get_length(s + 1));
+int n = 0;
+
+if (*s > '\0')
+	n += last_index(s + 1) + 1;
+
+return (n);
 }
 
 /**
- * check_palindrome - Checker the palindrome
- * Description: Checking Palindrome
- * @s: point the string
- * @start: Int
- * @end: Int
- * Return:Int
- */
-
-int check_palindrome(char *s, int start, int end)
-{
-	if (start >= end)
-	{
-		return (1);
-	}
-	if (*(s + start) == *(s + end))
-	{
-		return (check_palindrome(s, start + 1, end - 1));
-	}
-	return (0);
-}
-
-/**
- * is_palindrome - Checker for the palindrome
- * Description: Palindrome
- * @s: Character
- * Return: Int
+ * is_palindrome - check string
+ * @s: string the check
+ * Return: Intger
  */
 
 int is_palindrome(char *s)
 {
-	int len = get_length(s);
+	int end = last_index(s);
 
-	if (len == 0 || len == 1)
-	{
-		return (1);
-	}
-	return (check_palindrome(s, 0, len - 1));
+	return (check(s, 0, end - 1, end % 2));
+}
+
+/**
+ * check - Check the palindrome
+ * @s: Character
+ * @start: int move from right to left
+ * @end: Int
+ * @mod: Int
+ * Return: Intger
+ */
+
+
+int check(char *s, int start, int end, int mod)
+{
+
+	if ((start == end && mod != 0) || (start == end + 1 && mod == 0))
+	return (1);
+	else if (s[start] != s[end])
+	return (0);
+	else
+		return (check(s, start + 1, end - 1, mod));
 }
