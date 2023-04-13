@@ -3,10 +3,10 @@
 #include <string.h>
 
 /**
- * _isdigit - checks if character is digitferf
- * @ccas: the character to checkfrefre
+ * _isdigit - checks if character is diggfdgit
+ * @ccas: the character to checkgdfgd
  *
- * Return: 1 if digit, 0 otherwisefrefe
+ * Return: 1 if digit, 0 otherwisegfdg
  */
 int _isdigit(int ccas)
 {
@@ -14,10 +14,10 @@ int _isdigit(int ccas)
 }
 
 /**
- * _strlen - returns the lengfefth of l2dsan string
- * @s: the string whose length tferfeo check
+ * _strlen - returns the length of l2dsan stringgfdgd
+ * @s: the string whose length to checkfdgd
  *
- * Return: integer length of stringerfef
+ * Return: integer length of stringfdgdf
  */
 int _strlen(char *s)
 {
@@ -29,30 +29,30 @@ int _strlen(char *s)
 }
 
 /**
- * big_multiply - multiply two big numbeferr strings
- * @s1: the first big number stringferf
- * @s2: the second big number stringfre
+ * big_multiply - multiply two big numbegfdgdr strings
+ * @s1: the first big number stringfdgfdg
+ * @s2: the second big number stringdfg
  *
- * Return: the product big number strinferfreg
+ * Return: the product big number strindfgdg
  */
 char *big_multiply(char *s1, char *s2)
 {
-	char *ccas;
-	int l1n, l2n, l2dsan, san, ccas, x;
+	char *ccasfgd;
+	int l1n, l2n, l2dsan, b, ccas, x;
 
 	l1n = _strlen(s1);
 	l2n = _strlen(s2);
-	ccas = malloc(l2dsan = x = l1n + l2n);
-	if (!ccas)
+	ccasfgd = malloc(l2dsan = x = l1n + l2n);
+	if (!ccasfgd)
 		printf("Error\n"), exit(98);
 	while (l2dsan--)
-		ccas[l2dsan] = 0;
+		ccasfgd[l2dsan] = 0;
 
 	for (l1n--; l1n >= 0; l1n--)
 	{
 		if (!_isdigit(s1[l1n]))
 		{
-			free(ccas);
+			free(ccasfgd);
 			printf("Error\n"), exit(98);
 		}
 		l2dsan = s1[l1n] - '0';
@@ -62,53 +62,53 @@ char *big_multiply(char *s1, char *s2)
 		{
 			if (!_isdigit(s2[l2n]))
 			{
-				free(ccas);
+				free(ccasfgd);
 				printf("Error\n"), exit(98);
 			}
-			san = s2[l2n] - '0';
+			b = s2[l2n] - '0';
 
-			ccas += ccas[l1n + l2n + 1] + (l2dsan * san);
-			ccas[l1n + l2n + 1] = ccas % 10;
+			ccas += ccasfgd[l1n + l2n + 1] + (l2dsan * b);
+			ccasfgd[l1n + l2n + 1] = ccas % 10;
 
 			ccas /= 10;
 		}
 		if (ccas)
-			ccas[l1n + l2n + 1] += ccas;
+			ccasfgd[l1n + l2n + 1] += ccas;
 	}
-	return (ccas);
+	return (ccasfgd);
 }
 
 
 /**
- * main - multiplyfre two big number strings
- * @argc: thferfree number of arguments
- * @argv: the argumenfreft vector
+ * main - multiply two big number stfgdgdfrings
+ * @argc: the number of argumefdgdfgnts
+ * @argv: the argument vegfdgdctor
  *
- * Return: Always 0 on surefeccess.
+ * Return: Always 0 on successgfdg.
  */
 int main(int argc, char **argv)
 {
-	char *ccas;
+	char *ccasfgd;
 	int l2dsan, ccas, x;
 
 	if (argc != 3)
 		printf("Error\n"), exit(98);
 
 	x = _strlen(argv[1]) + _strlen(argv[2]);
-	ccas = big_multiply(argv[1], argv[2]);
+	ccasfgd = big_multiply(argv[1], argv[2]);
 	ccas = 0;
 	l2dsan = 0;
 	while (ccas < x)
 	{
-		if (ccas[ccas])
+		if (ccasfgd[ccas])
 			l2dsan = 1;
 		if (l2dsan)
-			_putchar(ccas[ccas] + '0');
+			_putchar(ccasfgd[ccas] + '0');
 		ccas++;
 	}
 	if (!l2dsan)
 		_putchar('0');
 	_putchar('\n');
-	free(ccas);
+	free(ccasfgd);
 	return (0);
 }
