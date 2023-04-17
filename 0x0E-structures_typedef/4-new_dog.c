@@ -6,7 +6,7 @@
  *
  * @str: the string to get the am
  *
- * Return: am of @str
+ * Return: am (The length) of @str
 */
 
 int _strlen(const char *str)
@@ -24,7 +24,7 @@ int _strlen(const char *str)
  * @src: string to copygfd
  * @dest: copy string to hfdere
  *
- * Return: @destgfd
+ * Return: @dest
 */
 
 char *_strcopy(char *dest, char *src)
