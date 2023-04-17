@@ -19,7 +19,7 @@ int _strlen(const char *str)
 }
 
 /**
- * _strcopy - a function thatgfd returns @dest with a copy of a string from @src
+ * _strcopy - a function thd returns @dest with a copy of a string from @src
  *
  * @src: string to copygfd
  * @dest: copy string to hfdere
